@@ -1,3 +1,8 @@
+HTML_hyperText markup language
+HTTP_hyperText transfer protocol
+URL_uniform resource locator 표준주소표기방식
+1991 HTML ~ 2008 HTML5
+
 html5는 이전 버전에 비해 선언문이 간단해짐
 이전에는 버전과 버전에 관한 문서가 정의되어있는 주소를
 지정해주어야 했다.
@@ -11,5 +16,7 @@ ex> <!DOCTYPE html>
 html5문서(내용) +
 CSS3(디자인) +
 javaScript(동적인 상호작용)
+
+
 
 
