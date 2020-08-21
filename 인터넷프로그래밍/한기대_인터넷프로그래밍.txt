@@ -6,7 +6,12 @@ URL_uniform resource locator 표준주소표기방식
 html5는 이전 버전에 비해 선언문이 간단해짐
 이전에는 버전과 버전에 관한 문서가 정의되어있는 주소를
 지정해주어야 했다.
-ex> <!DOCTYPE html>
+ex> 4.01
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN“  
+http://www.w3.org/TR/html4/loose.dtd">
+
+ex> 5
+<!DOCTYPE html>
 
 <!--주석-->
 
