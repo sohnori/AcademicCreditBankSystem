@@ -22,6 +22,11 @@ html5문서(내용) +
 CSS3(디자인) +
 javaScript(동적인 상호작용)
 
+html 4.01(div 요소로 영역을 지정했다)
+<div class = "header" >
+</div>
+html 5
+<header>
 
 
 
