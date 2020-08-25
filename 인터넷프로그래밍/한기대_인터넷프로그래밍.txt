@@ -28,5 +28,27 @@ html 4.01(div 요소로 영역을 지정했다)
 html 5
 <header>
 
+하이퍼텍스트 - 서로 연관된 문서나 텍스트 조각들을 연결
+하이퍼미디어
+
+하이퍼링크 연결
+<a href="링크할 곳의 파일이름"></a>
+
+GIF_graphic interchange format
+파일 크기가 작다
+표현가능색상이 256개
+
+JPEG_joint photographic experts group
+24비트의 칼라를 사용
+복잡한 그림이나 사진 등의 이미지에 적합
+
+PNG_portable network graphic
+24비트 또는 32비트 칼라를 사용
+비압축 형식인 bmp 형식의 장점도 고려
+
+BMP
+원본 이미지
+
+
 
 
