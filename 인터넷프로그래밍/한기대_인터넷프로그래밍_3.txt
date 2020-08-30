@@ -1,0 +1,13 @@
+input 요소
+<input type="속성 값">
+속성값_text, textbox, checkbox 등
+
+입력양식 폼 지정
+<form name="폼 이름" action="입력타입" method="전송방식">
+내용
+</form>
+입력타입_email, url, number, range, Date pickers, search, color
+
+form 태크의 데이터 전송방식
+GET_ 주소에 데이터를 직접 입력해 전달
+POST_별도의 방법을 사용해 데이터를 해당주소로 전달
