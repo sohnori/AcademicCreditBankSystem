@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title> 6-2 비디오 삽입하기</title>
+
+</head>
+<body>
+	<video  id="videoplay" controls autoplay loop width="700 height="500">
+		<source src="D:\P_개인\대은_홍보영상_국문_(20160929_수정).mp4" 
+			type="video/mp4; codecs="avc1.4D401E,mp4a40.2""></source>
+		<embed src="D:\P_개인\대은_홍보영상_국문_(20160929_수정).mp4"></embed>
+	</video>
+	<br><br>
+	<input type="button" value="play/pause" onclick="play();">
+	<input type="button" value="big size" onclick="big();">
+	<input type="button" value="small size" onclick="small();">
+	<script type="text/javascript">
+		
+		var videocontrol = document.getElementById("videoplay");
+		function play()
+		{
+			if(videocontrol.paused) videocontrol.play();
+			else videocontrol.pause();
+		}
+		function big()
+		{
+			videocontrol.width += 200;
+			videocontrol.height += 200;
+		}
+		function small()
+		{
+			videocontrol.width -= 200;
+			vidoecontrol.height -=200;
+		}
+	</script>
+</body>
+</html>

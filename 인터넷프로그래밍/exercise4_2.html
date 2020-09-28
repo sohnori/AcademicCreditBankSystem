@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title> Circle 4-2 </title>
+	<script type = "text/javascript">
+	function cir()
+	{
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');		
+		context.beginPath();
+		context.arc(100,100,150,0*Math.PI/180,360*Math.PI/180,false);
+		context.stroke();
+		context.beginPath();
+		context.arc(100,100,75,0*Math.PI/180,360*Math.PI/180,false);
+		context.stroke();
+		context.fill();
+	}
+	</script>
+</head>
+<body onload = "cir();">
+	<canvas id="canvas" width="500" height="400" style="border:solid 1px #000000" >
+	canvas 사용하기
+	</canvas>
+</body>
+</html>

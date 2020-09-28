@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title> 캔버스 사용하기 </title>
+	<script type = "text/javascript">
+	function rect()
+	{
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		context.fillRect(20,20,100,100);
+		context.clearRect(30,30,40,40);
+		context.strokeRect(150,20,100,100);
+		context.beginPath();
+		context.moveTo(300,300);
+		context.lineTo(350,350);
+		context.lineTo(400,300);
+		context.closePath();
+		context.stroke();
+	}
+	</script>
+</head>
+<body onload = "rect();">
+	<canvas id="canvas" width="1000" height="1000" style="border:solid 1px #000000" >
+	canvas 사용하기
+	</canvas>
+</body>
+</html>

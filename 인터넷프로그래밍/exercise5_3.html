@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title> Circle 5-3 캔버스 스타일</title>
+	<script type = "text/javascript">
+	function style()
+	{
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');		
+		context.beginPath();
+		context.moveTo(100,50);
+		context.lineTo(100,250);
+		context.lineTo(250,150);
+		context.lineWidth = 20;
+		context.globalAlpha = 0.5;
+		context.fillstyle = '#2D4576';
+		context.fill();
+
+		context.beginPath();
+		var rectstyle = context.createLinearGradient(250,50,200,300);
+		rectstyle.addColorStop(0.1,"yellow");
+		rectstyle.addColorStop(0.5,"red");
+		rectstyle.addColorStop(0.3,"green");
+		rectstyle.addColorStop(0.8,"blue");
+		context.fillStyle = rectstyle;
+		context.glovalAlpha = 0.5;
+		context.fillRect(50,50,300,300);
+
+		context.beginPath();
+		context.shadowOffsetX = 40;
+		context.shadowOffsetY = 40;
+		context.shadowColor = 'green';
+		context.shadowBlur = 50; // 흐려지는 정도
+		context.fillRect(200,200,200,200);
+
+		context.beginPath();
+		context.shadowOffsetX = 40;
+		context.shadowOffsetY = 40;
+		context.shadowColor = 'green';
+		context.shadowBlur = 50; // 흐려지는 정도
+		context.font = "bold 50pt 고딕";
+		context.textAlign = 'left';
+		context.textBaseLine = 'top';
+		context.fillText("HTML5 스타일지정하기", 100, 100);
+	}
+	</script>
+</head>
+<body onload = "style();">
+	<canvas id="canvas" width="1000" height="1000" style="border:solid 2px #0000FF" >
+	canvas 스타일
+	</canvas>
+</body>
+</html>

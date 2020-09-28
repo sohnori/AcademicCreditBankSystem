@@ -1,0 +1,108 @@
+원격접속 프로토콜
+Telnet, Rlogin, Terminal, 원격접근제어
+
+Telnet
+TCP 서비스 포트 23번 사용
+네크워크 가상 단말(NVT)을 사용(서로 다른 단말 시스템의 접속을 위하여)
+대칭적인 통신으로 단순하나 보안에 취약
+이를 강화하여 SSH_secure shell 을 대신 사용
+RFC854~RFC861에서 표준화
+NVT ASCII 코드 명령어를 사용
+데이터 전송_최상위비트0, 하위7비트는 US_ASCII와 동일
+명령어 전송_상위비트가 1로 설정된 8비트 문자를 사용(0xFF)
+IAC_interpret as command(0xFF) 이후에 오는 문자는 명령어로 해석
+
+Rlogin
+TCP 513번 포트를 통한 연결
+원격로그인을 의미
+인터넷 표준이 아니고 Unix BSD 계열 시스템간의 원격접속을 위해 설계
+클라이언트는 서버에게 널 문자(\0)로 구분되는 세 개의 문자열을 전송
+<ex
+\0lee001(클라이언트에서 사용한 로그인 이름)
+\0kim01(서버에서 사용할 로그인 이름)
+\0vt100/9600(터미널종류 및 전송속도)
+ex>
+접속 시도 시 서버는 사용자의 암호입력요구
+
+원격 데스크톱 프로토콜(RDP_remote desktop protocol)
+윈도우 기반 터미널
+윈도우 기반 클라이언트가 윈도우 기반 터미널 서버와 통신할 수 있게 해주는 프리젠테이션 프로토콜
+
+파일전송프로토콜
+FTP_TCP 21번포트(제어연결) 20번포트(데이터연결) 사용
+TFTP_UDP 69번 포트 trivial 작은파일
+NFS_network file system 시스템 간의 디스크 공유, 데이터의 보안과 무결성 보장(공유폴더 사용 시)
+
+FTP
+RFC 959 표준
+NVT를 사용하여 서로 다른 시스템의 통신을 가능하게 한다.
+일반 전송 모드 
+-방화벽 내부에서 사용
+-서버가 데이터 포트 20번에서 클라이언트가 지정한 포트(1024~)로 데이터 연결 요청
+수동 전송 모드 
+-클라이언트가 서버가 지정한 서버 포트(1024~)로 연결
+-클라이언트가 기본 데이터 채널이 아닌 다른 채널을 통해서 서버와의 연결을 먼저 요청
+-방화벽 통과 가능
+일반 FTP 접속 - 사용자의 id와 패스워드 입력
+익명 FTP 접속 - id_Anonymous, password_Guest 또는 사용자 이메일 주소
+FTP 바운스 어택 위험
+-방화벽 내부에 익명 FTP 서버가 있다면 방화벽의 패킷 필터링을 무시하고 침입가능
+-메일의 헤더 부분을 허위로 만든 가짜 메일을 만들어 전송가능
+-다른 서비스가 20번 포트 접속을 요청하면 거절하여 보안적용
+
+전자메일 프로토콜
+SMTP_simple mail transfer protocol
+POP_post office protocol
+IMAP_internet message access protocol
+MIME_multipurpose internet mail extension
+
+MUA_mail user agent
+MTA_mail transfer agent
+
+SMTP
+단순한 메일 전송 프로토콜
+RFC 822 표준 메시지 형식
+7비트 아스키코드로 전송
+TCP 25번 포트, SSL은 TCP 465번
+콜론(:)으로 명령어와 파라미터로 구분하여 구성
+ex>Mail From:sohnori@naver.com
+Rcpt To:b@bbb.co.kr
+
+POP
+모든 수신된 메일을 옮겨주는 기능을 수행
+TCP 110번, SSL 995번 포트
+
+IMAP
+수신된 메일 중에서 메일 제목만 확인하고 선택적으로 가져오는 것
+TCP 143번, SSL 993번 포트
+
+MIME
+RFC 2045~2049
+멀티미디어 형태의 데이터 파일을 메일로 주고 받을 수 있도록 확장
+S/MIME 보안강화
+
+전자메일 보안 프로토콜
+보안요구사항-기밀성, 송신자 인증, 메시지 무결성, 수신자 인증
+PGP_pretty good privacy
+S/MIME
+SSL 메일보안
+
+PGP
+RFC 4880 메일보안표준
+비밀키 암호화와 공개키 암호화 방식 병행
+대칭키와 비대칭키를 혼합
+
+S/MIME
+RSA 시큐리티 회사가 고안
+베리사인 회사에서 공인인증서를 받아야 사용가능
+
+네트워크 관리 프로토콜
+SNMP, CNMP
+
+SNMP_simple network management protocol
+UDP지원 161번, 162번(SNMP trap) 사용
+네트워크 관리자와 관리대상 시스템 에이전트 간의 통신규약
+
+CMIP_common management information protocol
+OSI 참조 모델에 근거한 네크워크 관리 프로토콜
+TCP사용
