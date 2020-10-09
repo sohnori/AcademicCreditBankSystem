@@ -1,0 +1,59 @@
+시리얼통신 프로토콜
+하나의 신호선을 통하여 데이터를 전송하는 것.
+SLIP, HDLC, PPP 프로토콜(라우터에서 나갈때)
+
+SLIP_serial line interface protocol
+IP패킷을 캡슐화하여 시리얼라인을 통하여 전송
+프레임의 시작과 끝은 END 문자로 구성
+인터넷 표준 프로토콜이 아님
+CRC 기능이 없음
+개선된 C-SLIP(압축)을 사용
+IP만 지원
+
+HDLC_high level data link control procedure
+시스코 장비들끼리 통신할 때 주로 사용
+네트워크의 시리얼 구간에 적용(WAN구간)
+CRC부호 적용되어 신뢰성이 높음, 전송효율이 높음
+포멧
+flag_8bits(01111110) | address_8 | control_8 | data_>=0 | checksum_16 | flag_8(01111110)
+data
+I-frame(정보_데이터정보를 신호) 0 | seq | P/F | next
+S-frame(감시_응답신호) 1 | 0 | type | P/F | next
+U-frame(비번호_연결설정 및 해제) 1 | 1 | type | P/F | modifier
+
+PPP_point to point
+일반적으로 집에서 사용하는 PC를 켜면 PPP로 해당 인터넷 서비스 서버와
+접속하는 절차를 갖는다.
+HDLC와 달리 프로토콜 종류에 따른 기능을 수행
+다중 프로토콜 지원
+인터넷 표준
+문자 중심과 비트 중심 데이터 전송 모두 지원
+WAN 구간의 프로토콜로 사용(라우터와 라우터 구간)
+OSI 7 layer 1, 2, 3 계층에 속함
+flag_8bits(01111110) | address_8 | control_8 | protocol_2 | data_>=0 | CRC_16 | flag_8(01111110)
+protocol
+0x0021 IP
+0xC021 LCP 데이터 링크 설정
+0x8021 NCP 네트워크 설정협상
+0xC023 PAP 클라이언트 인증(초기설정단계)
+0xC223 CHAP 클라이언트 인증(서비스 중간에 유효성검사)
+동작절차
+LCP를 통한 데이터 링크 설정
+클라이언트와 서버 간의 PAP 인증
+NCP를 통한 네트워크 프로토콜 설정
+
+PPPoE_PPP over ethernet
+물리매체 발견-> LCP 협상 -> PAP 인증 ->NCP 협상
+
+네트워크 케이블
+ISM_industrial scientific medical 주파수 대역_사전 허가 없이 사용할 수 있는 주파수 대역
+2.4Ghz, 5Ghz
+이동통신 주파수 대역 800~900Mhz 1.7~1.8Ghz 2.1~2.6Ghz
+IEEE 802.11b 최초 무선 LAN 표준화 명세
+광전송 회선 종류
+FTTH_fiber to the home
+FTTO_fiber to the office
+HFC_hybrid fiber coaxial cable
+가입자 광 전송장비
+AON_active 
+PON_passive
