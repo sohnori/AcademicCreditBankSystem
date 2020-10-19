@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title> 10-0 애니메이션 </title>
+	<style type="text/css">
+		div { width: 150px; height: 100px;
+			position: relative; left: 10px;
+			background: orange;
+			-webkit-transition-property: width, left, color;
+			-webkit-transition-duration: 2s, 2s, 2s;
+			-webkit-transition-timing-function: ease-in, linear, ease-in-out;
+			-webkit-transition-delay: 0s, 1s, 1s; }
+		div:active { width: 300px; left: 200px; background: red; }
+	</style>
+</head>
+<body>
+	<div> 트랜지션 속성 </div>
+</body>
+</html>

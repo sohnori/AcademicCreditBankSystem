@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title> 10-2 애니메이션 </title>
+	<style type="text/css">
+		@-webkit-keyframes myAnimation
+		{
+			0% { width : 100px; left: 0px; background: orange; }
+			10% { width : 120px; left: 30px; background: black; }
+			30% { width: 150px; left: 50px; background: green; }
+			50% { width:200px; left: 100px; background: blue; }
+			65% { width: 180px; left: 120px; background: yellow; }
+			80% { width: 150px; left: 150px; background: red; }
+			100% { width: 100px; left: 200px; bakcground: blue; }
+		}
+		div { width: 100px; height: 100px; position: relative; background: orange;
+			-webkit-animation-name: myAnimation;
+			-webkit-animation-duration: 3s;
+			-webkit-animation-delay: 0.5s;
+			-webkit-animation-timing-function: ease-in;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-direction: alternate;
+		}
+	</style>
+</head>
+<body>
+	<div> 애니메이션 속성 </div>
+</body>
+</html>
